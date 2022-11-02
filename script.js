@@ -356,6 +356,7 @@ document.addEventListener('mouseover', function(e) {
             // x = window.innerWidth || document.documentElement.clientWidth ||  document.getElementsByTagName('body')[0].clientWidth,
             x = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             y = window.innerHeight|| document.documentElement.clientHeight||  document.getElementsByTagName('body')[0].clientHeight;
+            console.log(x)
             if(x<=2000){
                 document.getElementsByClassName("element-info_section")[0]. className = "element-info_section mobile-selected";
                 document.getElementsByClassName("aside_inner")[0].className = "aside_inner mobile-selected";
@@ -365,10 +366,9 @@ document.addEventListener('mouseover', function(e) {
 
                 characteristics = document.getElementsByClassName("element-characteristic")
                 for (characteristic in characteristics) {
-                    document.getElementsByClassName("element-characteristic")[characteristic].className = "element-characteristic mobile-selected"
+                    document.getElementsByClassName("element-characteristic")[characteristic].classList.toggle("mobile-selected")
                 }
             }
-            document.getElementsByClassName("aside_inner mobile-selected")[0].style.width = document.getElementById("periodictable_section").offsetWidth+"px";
         })
     }
 }, false);
