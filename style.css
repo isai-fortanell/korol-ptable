@@ -1,0 +1,525 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap');
+
+body{
+    background-color: black;
+    font-family: Mulish;
+    padding: 15px;
+    height: 100vh;
+}
+
+main{
+    display: flex;
+}
+
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+::-webkit-scrollbar:vertical {
+    width:10px;
+}
+::-webkit-scrollbar-button:increment,::-webkit-scrollbar-button {
+    display: none;
+} 
+::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(80, 80, 80);
+    border-radius: 4px;
+    /* border: 1px solid rgb(100, 100, 100);; */
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+
+/* START aside styles */
+.element-info_section{
+    background-color: rgb(40, 40, 40);
+    width: 15vw;
+    min-width: 300px;
+    display: block;
+    margin-right: 15px;
+}
+.element-visualization_container{
+    display: block;
+}
+.back-button_mobile, .back-button_mobile p{
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+.element-visualization_inner{
+    background-color: #DAEAF1;
+    background-color:#717b80;
+    background: linear-gradient(90deg, rgba(59,44,133,1) 0%, rgba(33,152,151,1) 100%);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    height: auto;
+}
+.element-visualization{
+    margin: 5px;
+    width: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.element-characteristics{
+    height: 80vh;
+    overflow-y: scroll;
+}
+#atomic_model{
+    width: 130px;
+    height: 130px;
+}
+
+.elementv-general{
+    color: #eee
+}
+.elementv-general data{
+    margin-top: 5px;
+    font-size: 75%;
+}
+.elementv-general  abbr{
+    font-size: 140%;
+}
+
+div.elementv-energy-level{
+    display: block;
+    max-width: 15px;
+    text-align: right;
+    height: auto;
+}
+div.elementv-energy-level p{
+    margin: 0;
+}
+div.element-characteristic, .characteristic-title{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #eee;
+}
+.characteristic-title{
+    padding: 0px 5px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+.characteristic-title p{
+    text-align: center;
+    width: 90%;
+    border-bottom: 2px solid #eee;
+    padding: 4px 15px;
+    color: #BEAEE2;
+    font-weight: bolder;
+    font-size: 17px;
+}
+#first_characteristic-title{
+    padding-top: 10px;
+}
+.characteristic{
+    width: 30%;
+    font-weight: 650;
+}
+#serie{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.numeric_data{
+    display: flex;
+}
+div.magnitude{
+    display: flex;
+    align-items: right;
+    text-align: right;
+    margin-right: 10px;
+}
+#serie .magnitude{
+    padding: 5px;
+    margin: 0;
+    color: #000;
+    font-weight: 650;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+div.unit{
+    text-align: right;
+    color: #BEAEE2;
+}
+.temperature_select{
+    background-color: transparent;
+    color: #BEAEE2;
+    border: none;
+    margin-top: -15px;
+    outline: none;
+}
+/* END aside styles */
+
+
+
+/* START GUI styles*/
+.group-number{
+    padding-bottom: 15px;
+    color: #E7FBBE;
+}
+.period-number{
+    padding-right: 15px;
+    color: #D9D7F1;
+}
+
+#slider-temp{
+    color: #eee;
+}
+#slider-temp_container{
+    display: block;
+}
+#slider-temp_inner{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+input[type=button]{
+    width: 25px;
+    height: 25px;
+    background-color: #D9D7F1;
+    border: none;
+    border-radius: 3px;
+    margin: 2px;
+}
+input[type=range]{
+    -webkit-appearance: none;
+    border-radius: 3px;
+}
+input[type="range"] {
+    height: 15px;
+    background: rgb(227,95,0);
+    background: linear-gradient(45deg, rgba(227,95,0,1) 0%, rgba(255,252,111,1) 25%, rgba(242,255,197,1) 46%, rgba(101,170,199,1) 100%);
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 10px;
+    background-color:  #000;
+    border: 1px solid #bbb;
+}
+input[type=number]{
+    margin-left: 10px;
+    background-color: rgb(40, 40, 40);
+    border: none;
+    border-bottom: 2px solid #DAEAF1;
+    color: #eee;
+}
+/* END GUI styles */
+
+
+
+
+/* START: Element Information styles */
+#element-information{
+    position: relative;
+}
+#element-information_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#element-information_inner{
+    border-radius: 3px;
+    display: block;
+    position: absolute;
+    height: 250px;
+    width: 35vw;
+    min-width: 700px;
+}
+
+.element_information_name{
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, rgba(59,44,133,.4) 0%, rgba(33,152,151,.4) 100%);
+
+}
+.element_information_name b{
+    font-weight: 400;
+    font-weight: 200;
+    color: #eee;
+
+}
+.element_information_name b, .element_information_name abbr{
+    margin-top: 10px;
+    margin-left: 2px;
+    color: rgb(240, 240, 240);
+}
+#element_name{
+    font-weight: bolder;
+    margin-left: 5px;
+    font-style: italic;
+    font-size: 120%;
+    margin-top: 15px;
+}
+#cas_number{
+    position: absolute;
+    right: 15px;
+    font-size: 75%;
+    margin-top: 15px;
+}
+div.element_information{
+    background-color:#717b80;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    
+}
+div.description_container{
+    display: block;
+    font-weight: 450;
+    padding: 15px;
+}
+div.description_container p{
+    text-align: left;
+    margin: 0;
+}
+.discovery-info{
+    margin-top: 5px;
+    background-color: rgba(33,152,151,.2);
+    background: linear-gradient(90deg, rgba(59,44,133,.4) 0%, rgba(33,152,151,.4) 100%);
+    font-weight: bolder;
+    /* width: 90%; */
+    display: flex;
+    font-size: 17px;
+}
+#year_discovered{
+    margin-right: 10px;
+    font-style: italic;
+    font-size: 90%;
+    color: rgb(20, 20, 20);
+    padding: 5px 10px;
+    border-bottom: 1px solid #bbb;
+    margin-left: 5px;
+}
+#discoverer{
+    padding: 5px;
+    font-weight: 600;
+    color: rgb(40, 40,40);
+}
+#text_description{
+    margin-top: 10px;
+}
+
+div.identification_container{
+    display: block;
+    padding-right: 10px;
+}
+div.identification_container div{
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    width: 120px;
+    height: 25px;
+}
+div.identification_container p{
+    color: rgb(220, 220, 220);
+}
+div.identification_container p.characteristic{
+    color: black;
+}
+/*END: Element Information styles */
+
+
+
+/* START periodic table styles*/
+#periodictable_section{
+    background-color: rgb(40, 40, 40);
+    width: 85vw;
+    min-width: 1500px;
+    padding: 10px;
+}
+table{
+    table-layout: fixed ;
+    width: 100% ;
+    border-spacing: 5px;
+}
+.ch_element{
+    /* width: 50px; */
+    /* height: 80px; */
+    background-color: #E0FBFC;
+    background: linear-gradient(45deg, rgba(224,251,252,1) 0%, rgba(225,224,252,1) 100%);
+    background: linear-gradient(45deg, rgba(224,251,252,1) 0%, rgba(243,245,255,1) 100%);
+    padding: 8px;
+    border-radius: 3px;
+} 
+.ch_element.alkali{
+    /* background-color: #E5D9F2; */
+    background: linear-gradient(45deg, rgba(229,217,242,1) 0%, rgba(161,170,207,1) 100%);
+}
+.ch_element.alkaline-earth{
+    background-color: #FFE6E6;
+    background: linear-gradient(45deg, rgba(255,230,230,1) 0%, rgba(222,227,231,1) 100%);
+}
+.ch_element.semi-metal{
+    background-color: #bbfeff;
+    background: linear-gradient(45deg, rgba(187,254,255,1) 0%, rgba(187,232,255,1) 100%);
+
+}
+.ch_element.non-metal{
+    background-color: #bec6eb;
+    background: linear-gradient(45deg, rgba(190,198,235,1) 0%, rgba(225,216,249,1) 100%);
+
+}
+.ch_element.post-transition{
+    background-color: #F8F9D7;
+    background: linear-gradient(20deg, rgba(248,249,215,1) 0%, rgba(249,233,215,1) 100%);
+}
+.ch_element.noble-gas{
+    background-color: #F9F9F9;
+    background: linear-gradient(45deg, rgba(249,249,249,1) 0%, rgba(215,237,238,1) 100%);
+
+}
+.ch_element.lanthanide{
+    background-color: #D2F2Cf;
+    background: linear-gradient(45deg, rgba(210,242,207,1) 0%, rgba(228,251,251,1) 100%);
+
+}
+.ch_element.actinide{
+    background-color: #BDAEf0;
+    background: linear-gradient(45deg, rgba(189,174,240,1) 0%, rgba(218,174,240,1) 100%);
+
+}
+.ch_element.halogen{
+    background-color: #adc0d9;
+    background: linear-gradient(45deg, rgba(173,192,217,1) 0%, rgba(200,230,233,1) 100%);
+}
+.ch_element b, abbr, em, data{
+    display: block;
+    text-align: left;
+
+}
+.ch_element b{
+    color:  #986D8E;
+}
+.ch_element abbr{
+    font-size: 140%;
+}
+.ch_element em{
+    font-size: 90%;
+    font-weight: bolder;
+}
+.ch_element data{
+    font-size: 75%;
+    color:  #986D8E;
+}
+
+.ch_element:hover{
+    padding: 3px;
+    border: 5px solid #F8333C;
+}
+.ch_elementselected{
+    background-color: #eef;
+}
+
+#rare-earths_gap{
+    height: 50px;
+}
+/* END periodic table styles*/
+
+
+/* FOOTER */
+/* FOOTER */
+
+@media screen and (max-width: 800px) {
+    body{
+        padding: 0;
+    }
+
+    aside{
+        width: inherit;
+    }
+    #periodictable_section{
+        position: absolute;
+        max-width: 180vw;   
+    }
+    .element-info_section{
+        visibility: hidden;
+        width: 0px;
+    }
+    .element-info_section.mobile-selected{
+        visibility: visible;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        /* width: 1520px; */
+        /* height: 100vh; */
+        background-color: rgba(140, 140, 140, 0.5);
+        z-index: 1;
+    }
+    .aside_inner.mobile-selected{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(40, 40, 40);
+        overflow: scroll;
+    }
+    .element-characteristic.mobile-selected{
+        padding: 20px 50px;
+    }
+    .element-visualization_inner.mobile-selected{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 250px;
+        padding: 70px 25px 50px;
+    }
+    #atomic_model{
+        border-radius: 100%;
+        box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.15);
+        width: 250px;
+        height: 250px;
+        margin-left: 100px;
+    }
+    .element-visualization.mobile-selected{
+        margin: 5px;
+        width: 200px;
+        padding: 10px;
+        display: flex;
+        font-size: 20px;
+        justify-content: space-between;
+    }
+    .back-button_mobile.mobile-selected, .back-button_mobile.mobile-selected p{
+        visibility: visible;
+    }
+    .back-button_mobile.mobile-selected{
+        position: relative;
+    }
+    .back-button_mobile.mobile-selected p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10px;
+        position: absolute;
+        color: #eee;
+        top: 15px;
+        left: 15px;
+        cursor: pointer;
+        font-weight: bolder;
+    }
+
+}
+
+
