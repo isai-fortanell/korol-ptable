@@ -356,7 +356,7 @@ document.addEventListener('mouseover', function(e) {
             // x = window.innerWidth || document.documentElement.clientWidth ||  document.getElementsByTagName('body')[0].clientWidth,
             x = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             y = window.innerHeight|| document.documentElement.clientHeight||  document.getElementsByTagName('body')[0].clientHeight;
-            if(x<=800){
+            if(x<=2000){
                 document.getElementsByClassName("element-info_section")[0]. className = "element-info_section mobile-selected";
                 document.getElementsByClassName("aside_inner")[0].className = "aside_inner mobile-selected";
                 document.getElementsByClassName("element-visualization_inner")[0].className = "element-visualization_inner mobile-selected";
