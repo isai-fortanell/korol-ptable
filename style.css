@@ -452,7 +452,7 @@ table{
     }
     #periodictable_section{
         position: absolute;
-        max-width: 180vw;   
+        /* max-width: 180vw;    */
     }
     .element-info_section{
         visibility: hidden;
@@ -463,6 +463,7 @@ table{
         position: absolute;
         top: 0px;
         left: 0;
+        width: inherit;
         /* width: 1520px; */
         /* height: 100vh; */
         background-color: rgba(140, 140, 140, 0.5);
@@ -470,8 +471,8 @@ table{
     }
     .aside_inner.mobile-selected{
         position: fixed;
-        width: 100vw;
-        height: 100vh;
+        width: inherit;
+        /* height: 100vh; */
         background-color: rgb(40, 40, 40);
         overflow: scroll;
     }
@@ -483,19 +484,19 @@ table{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 250px;
+        /* height: 250px; */
         padding: 70px 25px 50px;
     }
     #atomic_model{
         border-radius: 100%;
         box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.15);
-        width: 250px;
-        height: 250px;
+        /* width: 250px; */
+        /* height: 250px; */
         margin-left: 100px;
     }
     .element-visualization.mobile-selected{
         margin: 5px;
-        width: 200px;
+        /* width: 200px; */
         padding: 10px;
         display: flex;
         font-size: 20px;
