@@ -17,43 +17,71 @@
 
                 <div class="element-visualization_container">
                     <div class="back-button_mobile"> <p class="back-button_mobile_inner">< BACK</p></div>
+                    <div class="element-visualization-background"></div>
                     <div class="element-visualization_inner">
-                        <div class="element-visualization">
-                            <div class="elementv-general">
-                                <b class="atomic_number__visualization"></b>
-                                <abbr class="symbol__visualization"></abbr>
-                                <em></em>
-                                <data></data>
+                        <div class="element-box">
+                            <div class="elementv-background"></div>
+                            <div class="elementv-text">
+                                <div class="elementv-general">
+                                    <b class="atomic_number__visualization"></b>
+                                    <abbr class="symbol__visualization"></abbr>
+                                    <em></em>
+                                    <data></data>
+                                </div>
+                                <div class="elementv-energy-level">
+                                    <p id="first_level"></p>
+                                    <p id="second_level"></p>
+                                    <p id="third_level"></p>
+                                    <p id="fourth_level"></p>
+                                    <p id="fifth_level"></p>
+                                    <p id="sixth_level"></p>
+                                    <p id="seventh_level"></p>
+        
+                                </div>
                             </div>
-                            <div class="elementv-energy-level">
-                                <p id="first_level"></p>
-                                <p id="second_level"></p>
-                                <p id="third_level"></p>
-                                <p id="fourth_level"></p>
-                                <p id="fifth_level"></p>
-                                <p id="sixth_level"></p>
-                                <p id="seventh_level"></p>
-    
-                            </div>
-                        </div>
-                        <canvas id="atomic_model" width="300" height="300"></canvas>
-                    </div>
 
+                        </div>
+                        <div class="atomic_model_container">
+                            <canvas id="atomic_model" width="300" height="300" ></canvas>
+                            <div class="switch_container">
+                                Turn off animation
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <div class="element-characteristic" id="serie">
+                        <div class="magnitude"></div>
+                    </div>
 
                 </div>
                 <div class="element-characteristics">
-                    <div class="element-characteristic" id="serie">
-                        <!-- <div class="characteristic">Serie</div> -->
-                        <div class="magnitude"></div>
-                    </div>
+
                     <div class="characteristic-title" id="first_characteristic-title">
                         <p>IDENTIFICACION</p>
                     </div>
                     <div class="element-characteristic" id="normal_state">
-                        <div class="characteristic">Estado</div>
-                        <div class="numeric_data">
-                            <div class="magnitude"></div>
+                        <div class="element-characteristic_container">
+                            <div class="characteristic">Estado a  <input type="number" data-unit="C" id="Celsius" min="-273" max="5727" value="0"><label for="Celsius">°C</label>
+                            </div>
+
+                            <div class="numeric_data">
+                                <div class="magnitude"></div>
+                            </div>
                         </div>
+                        <div id="slider-temp_container">
+                            <div id="slider-temp_inner">
+
+                                <input type="button"  id="less_btn" value="－" data-skip="-1">
+                                <input type="range" id="temp_slider" data-unit="C" min="-273" max="6700" value="0">
+                                <input type="button" id="more_btn" value="＋" data-skip="+1">
+                            </div>
+                        </div>
+                        
                     </div>
                     <div class="element-characteristic" id="atomic_mass">
                         <div class="characteristic">Masa Atómica</div>
@@ -66,11 +94,38 @@
                         <div class="characteristic">Densidad</div>
                         <div class="numeric_data">
                             <div class="magnitude"></div>
-                            <div class="unit">g/cm³</div>
+                            <select class="density_select">
+                                <option value="kg/m3" selected>kg/m3</option>
+                                <option value="g/cm3">g/cm3</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="element-characteristic" id="atomic_ratio">
-                        <div class="characteristic">Radio Atómico</div>
+                    <div class="element-characteristic" id="hardness">
+
+                        <div class="characteristic">Dureza
+                            <select class="hardness_select">
+                                <option value="mohs">Mohs</option>
+                                <option value="vickers">Vickers</option>
+                                <option value="brinell">Brinell</option>
+
+                            </select>
+                        </div>
+                        <div class="numeric_data">
+                            <div class="magnitude"></div>
+                            <div class="unit">MPa</div>
+                        </div>
+                    </div>
+                    <div class="element-characteristic" id="ratio">
+                        <div class="characteristic">Radio Atómico
+                            <select class="ratios_select">
+                                <option value="empyrical" selected>Empírico</option>
+                                <option value="calculated">Calculado</option>
+                                <option value="vanderwaals">Van der Waals</option>
+                                <option value="covalentsimple">Covalente (simple)</option>
+                                <option value="covalenttriple">Covalente (triple)</option>
+                                <option value="metalic">Metálico</option>
+                            </select>
+                        </div>
                         <div class="numeric_data">
                             <div class="magnitude"></div>
                             <div class="unit">pm</div>
@@ -104,11 +159,30 @@
                             </select>
                         </div>
                     </div>
-                    <div class="element-characteristic" id="specific_heat">
-                        <div class="characteristic">Calor específico</div>
+                    <div class="element-characteristic" id="sensible_heat">
+                        <div class="characteristic">Calor especifico</div>
                         <div class="numeric_data">
                             <div class="magnitude"></div>
-                            <div class="unit">J/kgK</div>
+                            <select class="sensible_heat_unity_select">
+                                <option value="J/kgK" selected>J /kg K</option>
+                                <option value="cal/kgK">cal /kg K</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="element-characteristic" id="latent_heat">
+                        <div class="characteristic">Calor latente
+                            <select class="latent_heat_type_select">
+                                <option value="fusion">de fusión</option>
+                                <option value="vaporization">de vaporización</option>
+                            </select>
+                        </div>
+                        <div class="numeric_data">
+                            <div class="magnitude"></div>
+                            <select class="latent_heat_unity_select">
+                                <option value="kJ/mol" selected>kJ /mol</option>
+                                <option value="kcal/mol">kcal /mol</option>
+                            </select>
                         </div>
                     </div>
 
@@ -126,14 +200,20 @@
                         <div class="characteristic">Afinidad electrónica</div>
                         <div class="numeric_data">
                             <div class="magnitude"></div>
-                            <div class="unit">eV</div>
+                            <select class="electronic_affinity_select">
+                                <option value="eV" selected>eV</option>
+                                <option value="kJ/mol">kJ/mol</option>
+                            </select>
                         </div>
                     </div>
                     <div class="element-characteristic" id="ionization_energy">
                         <div class="characteristic">Energía de ionización</div>
                         <div class="numeric_data">
                             <div class="magnitude"></div>
-                            <div class="unit">eV</div>
+                            <select class="ionization_energy_select">
+                                <option value="eV" selected>eV</option>
+                                <option value="kJ/mol">kJ/mol</option>
+                            </select>
                         </div>
                     </div>
 
@@ -158,17 +238,6 @@
                         <div class="magnitude"></div>
                     </div>
 
-                    <div class="characteristic-title">
-                       <p>ELECTRONES</p>
-                    </div>
-                    <div class="element-characteristic" id="electronic_configuration">
-                        <div class="characteristic">Configuración</div>
-                        <div class="magnitude"></div>
-                    </div>
-                    <div class="element-characteristic" id="energy_levels">
-                        <div class="characteristic">Niveles de energía</div>
-                        <div class="magnitude"></div>
-                    </div>
 
                     <div class="characteristic-title">
                         <p>ABUNDANCIA</p>
@@ -195,7 +264,10 @@
             <div class="periodictable_inner">
                 <table id="periodic_table">
                     <tr>
-                        <th colspan="1"></th>
+                        <th class="group-number title">
+                            <div>Grupos → </div>
+                            <div>↓ Periodos </div>
+                        </th>
                         <th class="group-number">
                             1
                         </th>
@@ -264,15 +336,6 @@
                         </th>
                         <th colspan="11"></th>
                         <th id="slider-temp">
-                            <div id="slider-temp_container">
-                                <label id="temp-label">Temperatura</label>
-                                <div id="slider-temp_inner">
-                                    <input type="button"  value="－" data-skip="-1">
-                                    <input type="range" data-unit="C" min="-273" max="5727" value="0">
-                                    <input type="button" value="＋" data-skip="+1">
-                                    <input type="number" data-unit="C" id="Celsius" min="-273" max="5727" value="0"><label for="Celsius">°C</label>
-                                </div>
-                            </div>
                         </th>
                         <th colspan="3"></th>
                         <th>
@@ -316,10 +379,19 @@
                                             <div class="discovery-info">
                                                 <p id="year_discovered"></p>
                                                 <p id="discoverer"></p>
-                                            </div>
-                                            <!-- <p id="text_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nemo.</p> -->
-    
+                                            </div>    
+
                                         </div>
+                                        <div class="element-characteristic" id="electronic_configuration">
+                                            <p class="characteristic">Configuración:</p>
+                                            <div class="magnitude"></div>                                           
+                                        </div>
+                                        <div class="element-characteristic" id="energy_levels">
+                                            <p class="characteristic">Niveles de energía:</p>
+                                            <div class="magnitude"></div>  
+                                        </div>
+      
+
                                         <div class="identification_container">
                                             <!-- <div id="group">
                                                 <p class="characteristic">Grupo:</p>
@@ -1085,23 +1157,26 @@
                             <data>(266)</data>
                         </th>
                     </tr>
-
+                    <tr id="last_gap"></tr>
                 </table>
 
             </div>
         </section>
 
     </main>
-    <!-- <footer>
+    <footer>
         <div class="footer_inner">
             <div class="korol">
-                <h1><span class="logo">Korol TABLE -</span><span id="by-korol"> By Korol Systems<span id="we-are"> WE ARE KOROL</span></h1>
+                <h1><span class="logo">Korol TABLE -</span><span id="by-korol"> By Korol Systems</span></h1>
             </div>
         </div>
 
-    </footer> -->
+    </footer>
 </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
-    <script src="script.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
     <script src="atomic_model.js"></script>
+    <script src="slider.js"></script>
+
 </html>

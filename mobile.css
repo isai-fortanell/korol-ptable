@@ -1,0 +1,84 @@
+
+@media screen and (max-width: 800px) {
+    body{
+        padding: 0;
+    }
+
+    aside{
+        width: inherit;
+    }
+    #periodictable_section{
+        position: absolute;
+        /* max-width: 180vw;    */
+    }
+    .element-info_section{
+        visibility: hidden;
+        width: 0px;
+    }
+    .element-info_section.mobile-selected{
+        visibility: visible;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: inherit;
+        /* width: 1520px; */
+        /* height: 100vh; */
+        background-color: rgba(140, 140, 140, 0.5);
+        z-index: 1;
+    }
+    .aside_inner.mobile-selected{
+        position: fixed;
+        width: inherit;
+        /* height: 100vh; */
+        background-color: rgb(40, 40, 40);
+        overflow: scroll;
+    }
+    .element-characteristic.mobile-selected{
+        padding: 20px 50px;
+    }
+    .element-visualization_inner.mobile-selected{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 250px; */
+        padding: 70px 25px 50px;
+        
+    }
+    #atomic_model{
+        border-radius: 100%;
+        box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.15);
+        /* width: 250px; */
+        /* height: 250px; */
+        margin-left: 100px;
+    }
+    .element-visualization.mobile-selected{
+        margin: 5px;
+        /* width: 200px; */
+        padding: 10px;
+        display: flex;
+        font-size: 20px;
+        justify-content: space-between;
+    }
+    .back-button_mobile.mobile-selected, .back-button_mobile.mobile-selected p{
+        visibility: visible;
+    }
+    .back-button_mobile.mobile-selected{
+        position: relative;
+    }
+    .back-button_mobile.mobile-selected p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10px;
+        position: absolute;
+        color: #eee;
+        top: 15px;
+        left: 15px;
+        cursor: pointer;
+        font-weight: bolder;
+    }
+
+}
+
+
